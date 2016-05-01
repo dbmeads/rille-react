@@ -28,7 +28,7 @@ function Component(spec) {
                 this.entry = store.entry();
 
                 this.componentDidMount = function () {
-                    unsubscribe = route.subscribe(function () {
+                    unsubscribe = store.subscribe(function () {
                         for (var _len = arguments.length, entry = Array(_len), _key = 0; _key < _len; _key++) {
                             entry[_key] = arguments[_key];
                         }
