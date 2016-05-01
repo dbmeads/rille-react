@@ -15,37 +15,36 @@ global.React = _react2.default;
 
 function Component(spec) {
     var _getInitialState = spec.getInitialState;
-    var _componentDidMount = spec.componentDidMount;
-    var _componentWillUnmount = spec.componentWillUnmount;
+    var componentDidMount = spec.componentDidMount;
+    var componentWillUnmount = spec.componentWillUnmount;
 
 
     return _react2.default.createClass(Object.assign(spec, {
         getInitialState: function getInitialState() {
             var store = this.store = this.props && this.props.store || spec.store;
             if (store) {
+                var unsubscribe;
+
                 this.entry = store.entry();
+
+                this.componentDidMount = function () {
+                    unsubscribe = route.subscribe(function () {
+                        for (var _len = arguments.length, entry = Array(_len), _key = 0; _key < _len; _key++) {
+                            entry[_key] = arguments[_key];
+                        }
+
+                        this.entry = entry;
+                        this.forceUpdate();
+                    }.bind(this));
+                    return componentDidMount ? componentDidMount.call(this) : undefined;
+                };
+                this.componentWillUnmount = function () {
+                    unsubscribe();
+                    return componentWillUnmount ? componentWillUnmount.call(this) : undefined;
+                };
                 return null;
             }
             return _getInitialState ? _getInitialState.call(this) : null;
-        },
-        componentDidMount: function componentDidMount() {
-            if (this.store) {
-                this.unsubscribe = this.store.subscribe(function () {
-                    for (var _len = arguments.length, entry = Array(_len), _key = 0; _key < _len; _key++) {
-                        entry[_key] = arguments[_key];
-                    }
-
-                    this.entry = entry;
-                    this.forceUpdate();
-                }.bind(this));
-            }
-            return _componentDidMount ? _componentDidMount.call(this) : undefined;
-        },
-        componentWillUnmount: function componentWillUnmount() {
-            if (this.unsubscribe) {
-                this.unsubscribe();
-            }
-            return _componentWillUnmount ? _componentWillUnmount.call(this) : undefined;
         }
     }));
 };

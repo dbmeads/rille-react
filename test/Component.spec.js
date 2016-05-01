@@ -1,29 +1,25 @@
-import Component from '../lib/Component';
-import {Router} from 'rille';
-import {find,renderIntoDocument} from './utils';
+import {Component, Store} from '../lib/index';
 import {expect} from 'chai';
 import {renderToStaticMarkup} from 'react-dom/server';
 
 describe('Component', () => {
     var Profile;
-    var router;
+    var store;
 
-    before(done => {
-        Router(r => {
-            router = r;
-            Profile = Component({
-                store: router.route('/profile'),
-                render() {
-                    name = this.entry ? this.entry[1].name : '';
-                    return <div>{name}</div>
-                }
-            });
-            done();
+    before(() => {
+        store = Store();
+
+        Profile = Component({
+            store: store('/profile'),
+            render() {
+                var name = this.entry ? this.entry[1].name : '';
+                return <div>{name}</div>
+            }
         });
     });
 
     it('should render route', () => {
-        router.push('/profile', {name: 'Jim'});
+        store('/profile').push({name: 'Jim'});
 
         expect(renderToStaticMarkup(<Profile></Profile>).indexOf('Jim')).to.be.above(0);
     });

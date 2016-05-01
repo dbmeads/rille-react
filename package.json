@@ -1,6 +1,6 @@
 {
   "name": "rille-react",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Rille + React",
   "main": "dist/lib/index.js",
   "author": "dbmeads@hotmail.com",
@@ -18,12 +18,7 @@
     "test": "npm run build && npm run mocha"
   },
   "dependencies": {
-    "immutable": "^3.8.1",
-    "rille": "0.0.11",
-    "tv4": "^1.2.7"
-  },
-  "peerDependencies": {
-    "react": "^15.0.1"
+    "rille": "^0.5.3"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
