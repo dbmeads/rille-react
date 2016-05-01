@@ -1,6 +1,6 @@
 {
   "name": "rille-react",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Rille + React",
   "main": "dist/lib/index.js",
   "author": "dbmeads@hotmail.com",
@@ -18,7 +18,7 @@
     "test": "npm run build && npm run mocha"
   },
   "dependencies": {
-    "rille": "^0.5.3"
+    "rille": "^0.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
