@@ -1,6 +1,6 @@
 {
   "name": "rille-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rille + React",
   "main": "dist/lib/index.js",
   "author": "dbmeads@hotmail.com",
