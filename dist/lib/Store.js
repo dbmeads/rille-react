@@ -19,8 +19,8 @@ function Store() {
                 _route.entry = entry;
             });
         },
-        makePublic: function makePublic(target, route) {
-            target.entry = function () {
+        wrap: function wrap(wrapper, route) {
+            wrapper.entry = function () {
                 return route.entry;
             };
         }
