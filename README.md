@@ -5,6 +5,8 @@
 ## Quick Links
 
 #### General
+* [Installation](#installation)
+* [Contributing](#contributing)
 * [Examples](#examples)
 * [Change Log](#change-log)
 
@@ -18,15 +20,17 @@ TBD
 
 [Back To Top](#quick-links)
 
-## Building/Testing
+## Installation
 
-```
-# Build
-$ npm run build
+1. Install rille-react: `npm install rille-react --save`
+2. Install peer dependancies: `npm install react --save`
 
-# Test
-$ npm test
-```
+[Back To Top](#quick-links)
+
+## Contributing
+
+* To Build: `npm run build`
+* To Test: `npm test`
 
 [Back To Top](#quick-links)
 
