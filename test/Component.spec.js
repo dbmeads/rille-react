@@ -1,4 +1,5 @@
-import {Component, Store} from '../lib/index';
+import {Component} from '../lib/index';
+import {Store} from 'rille';
 import {expect} from 'chai';
 import {renderToStaticMarkup} from 'react-dom/server';
 

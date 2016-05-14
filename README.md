@@ -38,14 +38,6 @@ Component();
 
 [Back To Top](#quick-links)
 
-## Store
-
-```js
-Store();
-```
-
-[Back To Top](#quick-links)
-
 ## Change Log
 
 [Back To Top](#quick-links)

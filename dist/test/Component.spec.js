@@ -2,6 +2,8 @@
 
 var _index = require('../lib/index');
 
+var _rille = require('rille');
+
 var _chai = require('chai');
 
 var _server = require('react-dom/server');
@@ -11,7 +13,7 @@ describe('Component', function () {
     var store;
 
     before(function () {
-        store = (0, _index.Store)();
+        store = (0, _rille.Store)();
 
         Profile = (0, _index.Component)({
             store: store('/profile'),
