@@ -42,7 +42,6 @@ function Component(spec) {
                     unsubscribe();
                     return componentWillUnmount ? componentWillUnmount.call(this) : undefined;
                 };
-                return null;
             }
             return _getInitialState ? _getInitialState.call(this) : null;
         }
