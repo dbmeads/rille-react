@@ -15,13 +15,14 @@ global.React = _react2.default;
 
 function Component(spec) {
     var _getInitialState = spec.getInitialState;
+    var getStore = spec.getStore;
     var componentDidMount = spec.componentDidMount;
     var componentWillUnmount = spec.componentWillUnmount;
 
 
     return _react2.default.createClass(Object.assign(spec, {
         getInitialState: function getInitialState() {
-            var store = this.store = this.props && this.props.store || spec.store;
+            var store = this.store = getStore ? getStore.call(this) : this.props && this.props.store || spec.store;
             if (store) {
                 var unsubscribe;
 
